@@ -8,9 +8,7 @@ const app = express();
 
 // const loginRouter = require('./routes/login.router');
 
-app.use(cors({
-    origin : 'http://localhost:3000', // whitelist of accepted clients
-}));
+app.use(cors());
 
 // app.use(express.json()); //middleware
 
