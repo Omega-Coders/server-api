@@ -25,15 +25,11 @@ async function postCropperDetails(req, res) {
 async function getCropperDetails(req, res) {
     try {
     const detail = await CropperModel.find();
-    return res.status(200).json(detail);
+    return res.status(200).json({detail});
     }catch(error) {
         return res.status(404).json({message: error.message});
     }
 }
-
-
-
-
 
 
 async function postTemplateImage(req, res) {
@@ -55,7 +51,7 @@ async function postTemplateImage(req, res) {
 async function getTemplateDetailsByName(req, res) {
     try {
         const det = await CropperModel.find({"templateName": req.body.tempname});
-        return res.status(200).json(det)
+        return res.status(200).json({det})
     }catch(error) {
         return res.status(404).json({message: error.message});
     }
@@ -64,7 +60,7 @@ async function getTemplateDetailsByName(req, res) {
 async function getTemplateImage(req, res) {
     try {
     const detail = await TemplateImageModel.find();
-    return res.status(200).json(detail);
+    return res.status(200).json({detail});
     }catch(error) {
         return res.status(404).json({message: error.message});
     }

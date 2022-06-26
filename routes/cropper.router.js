@@ -8,6 +8,8 @@ cropperRouter.post('/cropper/add-details', postCropperDetails);
 
 cropperRouter.get('/cropper/get-details', getCropperDetails);
 
+
+
 cropperRouter.get('/cropper/get-template-image', getTemplateImage);
 
 cropperRouter.get('/cropper/get-by-template-name', getTemplateDetailsByName);
