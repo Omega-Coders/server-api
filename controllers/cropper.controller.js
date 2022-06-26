@@ -50,7 +50,7 @@ async function postTemplateImage(req, res) {
 
 async function getTemplateDetailsByName(req, res) {
     try {
-        const det = await CropperModel.find({"templateName": req.body.tempname});
+        const det = await CropperModel.find({"templateName": req.params.tempname});
         return res.status(200).json({det})
     }catch(error) {
         return res.status(404).json({message: error.message});
