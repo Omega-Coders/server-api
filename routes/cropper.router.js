@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { postCropperDetails, getCropperDetails, getTemplateImage, postTemplateImage } = require('../controllers/cropper.controller');
+const { postCropperDetails, getCropperDetails, getTemplateImage, postTemplateImage ,getTemplateDetailsByName} = require('../controllers/cropper.controller');
 
 const cropperRouter = express.Router();
 
@@ -10,7 +10,7 @@ cropperRouter.get('/cropper/get-details', getCropperDetails);
 
 cropperRouter.get('/cropper/get-template-image', getTemplateImage);
 
-
+cropperRouter.get('/cropper/get-by-template-name', getTemplateDetailsByName);
 
 cropperRouter.post('/cropper/add-template-image', postTemplateImage);
 

@@ -52,7 +52,14 @@ async function postTemplateImage(req, res) {
 }
 
 
-
+async function getTemplateDetailsByName(req, res) {
+    try {
+        const det = await CropperModel.find({"templateName": req.body.tempname});
+        return res.status(200).json(det)
+    }catch(error) {
+        return res.status(404).json({message: error.message});
+    }
+}
 
 async function getTemplateImage(req, res) {
     try {
@@ -67,7 +74,7 @@ async function getTemplateImage(req, res) {
 
 
 
-module.exports = { postCropperDetails, getCropperDetails, getTemplateImage, postTemplateImage };
+module.exports = { postCropperDetails, getCropperDetails, getTemplateImage, postTemplateImage, getTemplateDetailsByName };
 
 
 
